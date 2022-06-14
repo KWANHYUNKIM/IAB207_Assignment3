@@ -1,0 +1,108 @@
+  /* mi ni navigation */ 
+  .mini-navbar {
+    background: #c0a46c;
+    text-align: left;
+  }
+  /* main navigation */
+
+  .main-navbar {
+    background-color: #fff;
+  }
+
+  .main-navbar img{
+    float: left;
+    width: 150px;
+    height : 150px;
+  }
+  .main-navbar{
+
+    text-align: center;
+  }
+  .main-navbar ul li{
+    
+    display: flex;
+    align-items: center;
+    height : 150px;
+    column-width: 200px;
+    margin : 0;
+    text-align : center;
+    padding : 0;
+    font-size:20px;
+  } 
+  .search-order textarea{
+    width: 400px;
+    height: 50px;
+  }
+  ::placeholder{
+    font-size: 10px;
+  }
+  .search-order select {
+    position: absolute;
+    font-size: 10px;
+    width: 150px;
+    height: 50px;
+    top:185px;
+    left:750px;
+
+  }
+  .Date-order select{
+    position: absolute;
+    font-size: 10px;
+    width: 150px;
+    height: 50px;
+    top:185px;
+    left:925px;
+ 
+  }
+  .booking-table table{
+    width: 1500px;
+    height: 300px;
+
+  }
+  .booking-talbe th, td {
+    border-bottom: 1px solid #808080;
+    padding: 3px;
+    text-align: left;
+
+  }
+  .booking-table button{
+    border: 1px solid #DCDCDC;
+    color: black;
+    background-color: white;
+    font-size: 15px;
+    width:100px;
+    height:40px;
+ 
+  }
+  .booking-table img{
+    width:250px;
+    height:100px;
+   
+  }
+ .fa{
+   font-size: 35px;
+ }
+ .index h2 {
+    margin: 10px 40px ;
+    font-family:'Koulen';font-size: 72px;
+
+ }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* styling our footer */
+  footer {
+    background: #222;
+    padding: 40px;
+    text-align: center;
+    color: #d8d8d8;
+  }

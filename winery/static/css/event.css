@@ -1,0 +1,223 @@
+/* 
+Attribution: The design of this website was heavily inspired by Scotch.io's HTML & CSS course
+https://scotch.io/courses/create-a-beautiful-htmlcss-website
+*/
+
+  /* mi ni navigation */ 
+ 
+  .mini-navbar {
+    background: #c0a46c;
+    text-align: left;
+  }
+  /* main navigation */
+
+  .main-navbar {
+    background-color: #fff;
+  }
+
+  .main-navbar img{
+    float: left;
+    width: 150px;
+    height : 150px;
+  }
+  .main-navbar{
+
+    text-align: center;
+  }
+  .main-navbar ul li{
+    
+    display: flex;
+    align-items: center;
+    height : 150px;
+    column-width: 200px;
+    margin : 0;
+    text-align : center;
+    padding : 0;
+    font-size:20px;
+  } 
+  /* main event picture  */
+  
+  .main_img img
+  {
+    max-width: 100%;
+    height : 85%;
+    position: relative;
+  }
+  .background
+  {
+    height: 800px;
+    width:  2000px;
+  }
+  .event_1_second img{
+
+    max-width: 100%;
+    height : 100%;
+    position: relative;
+  }
+  .event_img{
+    width : 600px;
+    height : 450px;
+  }
+  .small-event img{
+    margin-bottom: 10px;
+  }
+  .google-calender button{
+    border: 1px solid #008000;
+    cursor:pointer; cursor:hand;
+  	background-color: #008000;
+  	color: white;
+    width: 390px;
+    height: 50px;
+    margin: 5px 8px;
+    font-size: 12px;  
+  }
+  .column_1 h2{
+    font-size :16px;
+    line-height: 1.38;
+    font-weight: bold;
+  }
+  .column_2 h2{
+    font-size :16px;
+    line-height: 1.38;
+    font-weight: bold;
+  }
+  .column_3 h2{
+    font-size :16px;
+    line-height: 1.38;
+    font-weight: bold;
+  }
+  .column_4 h2{
+    font-size :16px;
+    line-height: 1.38;
+    font-weight: bold;
+  }
+  .column_5 h2{
+    font-size :16px;
+    line-height: 1.38;
+    font-weight: bold;
+  }
+  .Subscribe-Follow h2{
+    font-size :26px;
+    line-height: 1.38;
+    font-weight: bold;
+  }
+  .More-event h4{
+    font-size :16px;
+    line-height: 1.38;
+    font-weight: bold;
+  }
+
+  .tag-event button{
+    border: 1px solid black;
+    cursor:pointer; cursor:hand;
+  	background-color: white;
+  	color: black;
+  	padding: 5px;
+  	border-radius: 2em;
+    margin: 5px 8px;  
+  }
+  .fa {  
+    margin: 5px 2px;  
+    font-size: 60px;  
+    width: 60px;
+    color: black;  
+  }  
+  .Subscribe-Follow p{
+    text-align: center;
+  }
+  .Subscribe-Follow button{
+    margin : 5px 10px;
+    text-align: center;
+    color : #4B89DC;
+    border :1px solid #4B89DC;
+  }
+  .Subscribe-Follow h2{
+    text-align: center;
+  }
+  /* main  */
+  .upcoming_event h2{
+    color :rgb(0, 0, 0);
+    text-align: center;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+  }
+  
+  /* styling our main content */  
+  .main_event {
+    color: rgb(0, 0, 0);
+    padding-top: 12px;
+  }
+ 
+  .event_1 p
+  {
+    font-size: 15x;
+    font-weight : bolder;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+
+  }
+  .column_1 {
+    border : 1px solid black;
+    text-align: center;
+  }
+  .column_2 {
+    border : 1px solid black;
+    text-align: center;
+  }
+  .column_3 {
+    border : 1px solid black;
+    text-align: center;
+  }
+  .column_4 {
+    border : 1px solid black;
+    text-align: center;
+  }
+  .flag{
+    width: 50px;
+    height : 50px;
+  }
+  .star{
+    width: 50px;
+    height : 50px;
+  }
+  .review textarea{
+    border: 1px solid #DCDCDC;
+    color: black;
+    background-color: white;
+    font-size: 15px;
+    width:500px;
+    height:30px;
+  }
+  .review button{
+    position: absolute;
+    top:4995px;
+    left:1150px;
+    border: 1px solid #008000;
+    cursor:pointer; cursor:hand;
+  	background-color: #008000;
+  	color: white;
+    width: 100px;
+    height: 30px;
+    margin: 5px 8px;
+    font-size: 12px;  
+  }
+  /* contact us and bottom of mini bar  */
+  .minibar h6{
+    color :#c0a46c;
+    text-align: center;
+  }
+  .minibar p {
+    text-align: center;
+  }
+  .minibar input{
+    float: none; 
+    margin:0 auto;
+  }
+  .search{
+    text-align: center;
+  }
+  /* styling our footer */
+  footer {
+    background: #222;
+    padding: 40px;
+    text-align: center;
+    color: #d8d8d8;
+  }
