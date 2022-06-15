@@ -2,6 +2,16 @@ from flask_wtf import FlaskForm
 from wtforms.fields import TextAreaField, SubmitField, StringField, PasswordField
 from wtforms.validators import InputRequired, Length, EqualTo,Email
 
+
+#Create new destination
+class DestinationForm(FlaskForm):
+  name = StringField('Country', validators=[InputRequired()])
+  description = TextAreaField('Description', 
+            validators=[InputRequired()])
+  image = StringField('Cover Image', validators=[InputRequired()])
+  currency = StringField('Currency', validators=[InputRequired()])
+  submit = SubmitField("Create")
+
 #User login
 class LoginForm(FlaskForm):
     user_name=StringField("User Name", validators=[InputRequired('Enter user name')])
@@ -19,3 +29,8 @@ class RegisterForm(FlaskForm):
     confirm = PasswordField("Confirm Password")
     #submit button
     submit = SubmitField("Register")
+#User comment
+class CommentForm(FlaskForm):
+  text = TextAreaField('Comment', [InputRequired()])
+  submit = SubmitField('Create')
+  

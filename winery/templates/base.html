@@ -1,6 +1,7 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
+{% block header %}
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -51,7 +52,11 @@
         <li class="nav-link"><a class="nav-link text-black text-uppercase font-weight-bold px-5" href="#">WINERY NEWS </a></li>
       </ul>
       </div>
-  </nav>   
+  </nav> 
+  {% endblock %}
+    
+  </header>
+  {% block content %}  
   <!-- advertise 1 event-->
   <div class ="container-flex">
     <div class = "row">
@@ -309,7 +314,6 @@
           </div> 
         </div> 
       </div>
-
     <!-- Line Spacing -->
      <div class = "container-flex">
        <div class = "row">
@@ -369,6 +373,8 @@
       </div>
     </main>
     <!-- the footer -->
+    {% endblock %}
+
     <footer>
       <span>Winery<br />Copyright &copy; 2022 </span>
     </footer>
