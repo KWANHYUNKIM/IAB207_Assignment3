@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 {% block header %}
@@ -29,21 +28,27 @@
   <nav class="mini-navbar navbar-expand-md navbar-light">
     <div class="container-flex">
       <ul class="mini-bar nav justify-content-end">
-        <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="event_creation">CREATE EVENT</a></li>
+        {% if current_user.is_authenticated  %}
+        <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="create">CREATE EVENT</a></li>
         <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="event">EVENT INFORMATION</a></li>
         <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="booking_history">BOOKING HISTORY </a></li>
+        <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="logout">Logout</a></li> 
+        <li href="#" class='fa fa-instagram nav-link text-light text-uppercase font-weight-bold px-3 fa-2x'></li>
+        <li href="#" class='fa fa-facebook nav-link text-light text-uppercase font-weight-bold px-3 fa-2x'></li>
+        <li href="#" class='fa fa-twitter nav-link text-light text-uppercase font-weight-bold px-3 fa-2x'></li>
+        {% else %}
+        <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="event">EVENT INFORMATION</a></li>
         <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="login">LOGIN</a></li> 
         <li href="#" class='fa fa-instagram nav-link text-light text-uppercase font-weight-bold px-3 fa-2x'></li>
         <li href="#" class='fa fa-facebook nav-link text-light text-uppercase font-weight-bold px-3 fa-2x'></li>
         <li href="#" class='fa fa-twitter nav-link text-light text-uppercase font-weight-bold px-3 fa-2x'></li>
       </ul>
+      {% endif %}
     </div>  
   </nav>
    <!-- the main-navbar -->
   <nav class="main-navbar navbar-expand-md bg-white">
     <div class="container-flex">     
-    
-
       <ul class="nav justify-content-center">
         <li class="nav-link"><a class="nav-link text-black text-uppercase font-weight-bold px-5" href="#">BOOK WINE TASTING</a></li>
         <li class="nav-link"><a class="nav-link text-black text-uppercase font-weight-bold px-5" href="#">ACTIVE WINERY</a></li>

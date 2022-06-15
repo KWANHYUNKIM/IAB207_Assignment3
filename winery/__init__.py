@@ -4,14 +4,16 @@ from flask_bootstrap import Bootstrap4
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
+
 db=SQLAlchemy()
+
 
 
 #create a function that creates a web application
 # a web server will run this web application
 def create_app():
    
-    app=Flask(__name__)  # this is the name of the module/package that is calling this app
+    app=Flask(__name__)  
     #we use this utility module to display forms quickly
     bootstrap = Bootstrap4(app)
     
@@ -28,12 +30,16 @@ def create_app():
     #create a user loader function takes userid and returns User
     from .models import User  # importing here to avoid circular references
     @login_manager.user_loader
+    
     def load_user(user_id):
         return User.query.get(int(user_id))
 
     from . import views
     app.register_blueprint(views.mainbp)
+    from . import destinations
+    app.register_blueprint(destinations.bp)
     from . import auth
     app.register_blueprint(auth.bp)
+    
     return app
 
