@@ -5,15 +5,16 @@ from flask_wtf.file import FileRequired, FileField, FileAllowed
 
 ALLOWED_FILE = {'PNG','JPG','png','jpg'}
 
-#Create new destination
+#Create new winery information and ticket status 
 class DestinationForm(FlaskForm):
-  name = StringField('Country', validators=[InputRequired()])
+  name = StringField('Winery title', validators=[InputRequired()])
   description = TextAreaField('Description', 
             validators=[InputRequired()])
-  image = FileField('Destination Image', validators=[
+  image = FileField('Winery Image', validators=[
     FileRequired(message='Image cannot be empty'),
     FileAllowed(ALLOWED_FILE, message='Only supports png,jpg,JPG,PNG')])
-  currency = StringField('Currency', validators=[InputRequired()])
+  ticket_quantity = StringField('Ticket Quantity',validators=[InputRequired()])
+  price = StringField('Ticket Price',validators=[InputRequired()])
   submit = SubmitField("Create")
 
 #User login
@@ -37,5 +38,4 @@ class RegisterForm(FlaskForm):
 #User comment
 class CommentForm(FlaskForm):
   text = TextAreaField('Comment', [InputRequired()])
-  submit = SubmitField('Create')
-  
+  submit = SubmitField('Create')  

@@ -29,7 +29,7 @@
     <div class="container-flex">
       <ul class="mini-bar nav justify-content-end">
         {% if current_user.is_authenticated  %}
-        <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="create">CREATE EVENT</a></li>
+        <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="destinations/create">CREATE EVENT</a></li>
         <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="event">EVENT INFORMATION</a></li>
         <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="booking_history">BOOKING HISTORY </a></li>
         <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="logout">Logout</a></li> 
@@ -50,6 +50,7 @@
   <nav class="main-navbar navbar-expand-md bg-white">
     <div class="container-flex">     
       <ul class="nav justify-content-center">
+        <li class="nav-link"><a class="nav-link text-black text-uppercase font-weight-bold px-5" href="destinations/1">PUBLIC EVENT</a></li>
         <li class="nav-link"><a class="nav-link text-black text-uppercase font-weight-bold px-5" href="#">BOOK WINE TASTING</a></li>
         <li class="nav-link"><a class="nav-link text-black text-uppercase font-weight-bold px-5" href="#">ACTIVE WINERY</a></li>
         <li><img src="{{ url_for('static', filename='img/winery_logo.png') }}" alt="" class = "" /></li>
@@ -105,8 +106,6 @@
           Public <strong>Tastings</strong> and <strong>Tours</strong> are available by <strong>RESERVATION</strong>.<br><br>
           Online orders are available for pick-up.
         </p>
-          <button type="button">PUBLIC TASTING</button>
-          <button type="button">PUBLIC TOUR</button>
       </div>
       
       <div class = "divided-picture col-md-6">
@@ -118,12 +117,10 @@
     <div class = "row">
       <div class = "divided-picture-writing col-md-6">
         <img src = "{{ url_for('static', filename='img/winery_picture1.jpg') }}" alt ="background" class ="picture1 img-response">
-        <button type="button" class = "button-tour">TOURS</button>  
       </div>
 
       <div class = "divided-picture col-md-6">
         <img src ="{{ url_for('static', filename='img/winery_picture2.jpg') }}" alt ="background" class ="picture1 img-response">
-        <button type="button" class = "button-tasting">TASTING</button>  
       </div>
     </div>
   </div>
@@ -135,14 +132,14 @@
           <div class = "row">
             <div class = "Upcoming-event col-lg">
               <hr>
-              <h2>Upcoming event</h2>
+              <h2>Event Page</h2>
               <hr>
             </div>
           </div>
-  
+          
           <div class = "row">
             <div class = "event col-lg">
-                <img src="../img/event_1.png" alt="event_1" class = "img-thumbnail" />
+                <img src="{{ url_for('static', filename='/img/event_1.png') }}" alt="event_1" class = "img-thumbnail" />
                 <h4> Easter Family Fun Day at Sirromet – 17th April 2022 </h4>
                 <p>Yay – our popular Family Fun Day is back at Sirromet & just in time for Easter Sunday!<br>
                   <br>
@@ -154,10 +151,9 @@
                 <br>
             </div>
           </div> 
-          
           <div class = "row">
             <div class = "event col-lg">
-                <img src="../img/event_2.png" alt="event_2" class = "img-thumbnail" />
+                <img src="{{ url_for('static', filename='/img/event_2.png') }}" alt="event_2" class = "img-thumbnail" />
                 <h4>Easter Sunday Lunch at Lurleen’s – 17th April 2022 – Fully Booked</h4>
                 <p>Looking for something special to do this Easter?<br><br> 
                   Gather the family and enjoy a beautifully curated 4 course luncheon including beverages and special visit from the Easter bunny at Lurleen’s.<br>
@@ -170,7 +166,7 @@
     
           <div class = "row">
             <div class = "event col-lg">
-              <img src="../img/event_3.png" alt="event_3" class = "img-thumbnail" />
+              <img src="{{ url_for('static', filename='/img/event_3.png') }}" alt="event_3" class = "img-thumbnail" />
               <h4>Wine Selectors 50 Best Tasting – 19th April 2022 – Fully Booked</h4>
               <p>Crystalbrook Vincent • Brisbane City, QLD<br><br> 
                 Starts at A$139.00<br>
@@ -183,7 +179,7 @@
 
           <div class = "row">
             <div class = "event col-lg">
-              <img src="../img/event_4.png" alt="event_4" class = "img-thumbnail" />
+              <img src="{{ url_for('static', filename='/img/event_4.png') }}" alt="event_4" class = "img-thumbnail" />
               <h4>Urban Wine Walk - Brisbane (QLD) – 21th April 2022 – Fully Booked</h4>
               <p>Multiple Venues • Brisbane, QLD<br><br> 
                 Starts at A$79.99<br>
@@ -208,7 +204,7 @@
      
             <div class = "row">
               <div class = "event col-sm">
-               <img src="../img/event_5.png" alt="event_5" class = "img-thumbnail" />
+               <img src="{{ url_for('static', filename='/img/event_5.png') }}" alt="event_5" class = "img-thumbnail" />
                 <h4>Mother’s Day Scenic Helicopter Flight for Two – Sunday 8th May 2022</h4>
                 <p>
                     Threat mum this Mother’s day to an amazing 15-minute scenic flight over Sirromet Winery and breathtaking Moreton Bay.
@@ -219,7 +215,7 @@
         
             <div class = "row">
               <div class = "event col-sm">
-                <img src="../img/event_6.png" alt="event_6" class = "img-thumbnail" />
+                <img src="{{ url_for('static', filename='/img/event_6.png') }}" alt="event_6" class = "img-thumbnail" />
                 <h4>Women’s Wednesday Wine Club Winter Lunch – 15th June 2022</h4>
                 <p>Delve into the whimsical world of wine with Nadine Delahunty, Sirromet Family Ambassador (@nadinethewinequeen) and enjoy a spectacular 3-course lunch (with wines).<br> 
                   Women’s Wednesday Wine Club events offer a unique opportunity to learn the intricacies of wine, in a fun, casual way, whilst meeting like-minded lovers of wine.
@@ -232,7 +228,7 @@
 
             <div class = "row">
              <div class = "event col-sm">
-                <img src="../img/event_7.png" alt="event_7" class = "img-thumbnail" />
+                <img src="{{ url_for('static', filename='/img/event_7.png') }}" alt="event_7" class = "img-thumbnail" />
                 <h4>Sense of Taste Tarragindi Wine Fair</h4>
                 <p>
                  Sat, May 28, 2:00 PM<br>
@@ -245,7 +241,7 @@
 
             <div class = "row">
              <div class = "event col-sm">
-               <img src="../img/event_8.png" alt="event_8" class = "img-thumbnail" />
+               <img src="{{ url_for('static', filename='/img/event_8.png') }}" alt="event_8" class = "img-thumbnail" />
                 <h4>Vintopid!</h4>
                 <p>
                  Fri, May 13, 5:00 PM + 1 more event<br>
@@ -269,7 +265,7 @@
         
         <div class = "row">
           <div class = "event col-sm">
-            <img src="../img/event_9.png" alt="event_9" class = "img-thumbnail" />
+            <img src="{{ url_for('static', filename='/img/event_9.png') }}" alt="event_9" class = "img-thumbnail" />
              <h4>Sunny's Wine Fair– March 29, 11:30 AM</h4>
              <p>
               Sunny's Margate Beach • Margate, QLD<br>
@@ -281,7 +277,7 @@
       
         <div class = "row">
           <div class = "event col-sm">
-              <img src="../img/event_10.png" alt="event_10" class = "img-thumbnail" />
+              <img src="{{ url_for('static', filename='/img/event_10.png') }}" alt="event_10" class = "img-thumbnail" />
               <h4>The Bubbles Festival Brisbane</h4>
               <p>Fri, March 13, 6:00 PM + 2 more events<br>
                 Customs House • Brisbane City, QLD<br>
@@ -295,7 +291,7 @@
 
         <div class = "row">
           <div class = "event col-sm">
-            <img src="../img/event_11.png" alt="event_11" class = "img-thumbnail" />
+            <img src="{{ url_for('static', filename='/img/event_11.png') }}" alt="event_11" class = "img-thumbnail" />
              <h4>Sense of Taste Tarragindi Wine Fair</h4>
              <p>
               Sat, May 28, 2:00 PM<br>
@@ -308,7 +304,7 @@
 
         <div class = "row">
           <div class = "event col-sm">
-            <img src="../img/event_12.png" alt="event_12" class = "img-thumbnail" />
+            <img src="{{ url_for('static', filename='/img/event_12.png') }}" alt="event_12" class = "img-thumbnail" />
              <h4>Cheese Degustation!</h4>
              <p>
               Fri, March 13, 5:00 PM + 1 more event<br>

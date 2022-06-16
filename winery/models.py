@@ -22,13 +22,12 @@ class Destination(db.Model):
     name = db.Column(db.String(80))
     description = db.Column(db.String(200))
     image = db.Column(db.String(400))
-    currency = db.Column(db.String(3))
+    ticket_quantity = db.Column(db.Integer)
+    price = db.Column(db.Integer)
     # ... Create the Comments db.relationship
 	# relation to call destination.comments and comment.destination
     comments = db.relationship('Comment', backref='destination')
 
-    
-	
     def __repr__(self): #string print method
         return "<Name: {}>".format(self.name)
 
