@@ -34,7 +34,8 @@
               <div class="media-body">  
                 <h5 class="mt-0">{{destination.name}}</h5>  
                 <p>{{destination.description}}</p>  
-                <a href="#" class="btn btn-danger">Book Now ></a>
+                <a href="{{url_for('ticket') }}" class="btn btn-danger">Book Now ></a>
+                <a href="#" class="btn btn-danger">Next Page ></a>
               </div>  
             </div>  
           </div>  
@@ -42,22 +43,3 @@
       </div>  
     </div>     
  
-    <hr>  
- 
-    <!-- Comments -->  
-    <div class="row">  
-      <div class="col-md-12">  
-        <h2>Comments</h1>  
-      </div>  
-    </div>  
-    <div class="row border-bottom"> 
-        {{render_form(form, "/destinations/{0}/comment".format(destination.id))}}   
-      {% for comment in destination.comments %}
-      <div class="col-md-12">  
-        <b>{{comment.user.name}} <span class="ml-2 text-muted">January 2017</span></b>
-        <p>{{comment.text}}</p>  
-      </div> 
-      {% endfor %} 
-    </div>  
-  </div> 
-{% endblock %}

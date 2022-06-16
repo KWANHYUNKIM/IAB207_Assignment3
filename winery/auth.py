@@ -57,7 +57,10 @@ def login():
         else:
             flash(error)
     return render_template('user.html', form=login_form, heading='Login')
-
+@bp.route('/booking')
+@login_required
+def booking():
+     return render_template('booking_history.html')
 @bp.route('/logout')
 @login_required
 def logout():

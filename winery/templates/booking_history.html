@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "base.html" %}
+{% from "bootstrap5/form.html" import render_form  %}
+{% block header %}
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <!--title -->
+    <title>booking-history</title>
+    <!-- link the CSS stylesheet -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/booking_history.css')}}" />
+    <!-- link the Merriweather font-->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet"/>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href='https://fonts.googleapis.com/css?family=Koulen' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100&display=swap" rel="stylesheet">
+    <!-- social media icon-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/98ba2e2a27.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <!-- the header -->
+  <header>
+    <nav class="mini-navbar navbar-expand-md navbar-light">
+      <div class="container-flex">
+        <ul class="mini-bar nav justify-content-end">
+          {% if current_user.is_authenticated  %}
+          <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="{{ url_for('destination.create') }}">CREATE EVENT</a></li>
+          <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="#">EVENT INFORMATION</a></li>
+          <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="#">BOOKING HISTORY </a></li>
+          <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="logout">Logout</a></li> 
+          <li href="#" class='fa fa-instagram nav-link text-light text-uppercase font-weight-bold px-3 fa-2x'></li>
+          <li href="#" class='fa fa-facebook nav-link text-light text-uppercase font-weight-bold px-3 fa-2x'></li>
+          <li href="#" class='fa fa-twitter nav-link text-light text-uppercase font-weight-bold px-3 fa-2x'></li>
+          {% else %}
+          <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="#">EVENT INFORMATION</a></li>
+          <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="{{ url_for('auth.login') }}">LOGIN</a></li> 
+          <li href="#" class='fa fa-instagram nav-link text-light text-uppercase font-weight-bold px-3 fa-2x'></li>
+          <li href="#" class='fa fa-facebook nav-link text-light text-uppercase font-weight-bold px-3 fa-2x'></li>
+          <li href="#" class='fa fa-twitter nav-link text-light text-uppercase font-weight-bold px-3 fa-2x'></li>
+        </ul>
+        {% endif %}
+      </div>  
+    </nav>
+    {% endblock %}
+  </header>
+  {% block content %}  
+<main> 
+   <!--search function and title-->
+    <div class = "container-flex">
+      <div class = "row">
+        <div class = "booking_event col-sm-2" >
+        </div>   
+    
+        <div class = "booking_table col-xxl">
+          <div class = index>
+            <h2>BOOKING</h2>
+            <hr>
+
+        <div class ="search-order">
+          <textarea type ="text" placeholder="Search order number,email,or name"></textarea>
+          <form>
+            <select aria-label="State" name = "search-by">
+              <option value = "none">Search by</option>
+              <option>Booked</option>
+              <option>Pending</option>
+              <option>Done</option>
+            </select>
+          </form>
+        </div>
+
+        <div class ="Date-order">
+          <form>
+            <select aria-label="State" name = "date-order">
+              <option value = "none">Date range</option>
+              <option>Past 3months</option>
+              <option>Past 6months</option>
+              <option>Past 12months</option>
+            </select>
+          </form>
+        </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  <!--Table-->
+  <div class = "container-flex">
+    <div class ="row">
+      <div class = "col-sm-2">
+      </div>
+      <div class = "booking-table col-xxl">
+        <table>
+          <th>Number</th>
+          <th>Date</th>
+          <th>Booking</th>
+          <th>Image</th>
+          <th>EventName</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Status</th>
+          <th>description</th>
+          <tr>
+          <td>1</td>
+          <td>Now 29</td>
+          <td>#1425 Winery #95421352</td>
+          <td><img src="../img/event_1.png" alt="event_2" class = "img-thumbnail" /></td>
+          <td>Winery Festival</td>
+          <td>Now 30</td>
+          <td>Now 30</td>
+          <td>Paid</td>
+          <td>
+            <button type="button" class = "add-button" onclick=click_event()>View</button>
+            <button type="button" class = "add-button">Cancel</button>
+          </td>
+          </tr>
+          <tr>
+          <td>2</td>
+          <td>Now 25</td>
+          <td>#1423 Winery tours #96135823
+          <td><img src="../img/event_2.png" alt="event_2" class = "img-thumbnail" /></td> 
+          </td>
+          <td>Brisbane Winery tour</td>
+          <td>Now 24</td>
+          <td>Now 25</td>
+          <td>Cancelled</td>
+          <td>
+            <button type="button" class = "add-button" onclick=click_event() >View</button>
+          </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Dec 13</td>
+            <td>#1421 Winery daytime #96135823</td>
+            <td><img src="../img/event_3.png" alt="event_2" class = "img-thumbnail" /></td> 
+            <td>Brisbane Wine Tasting</td>
+            <td>Dec 24</td>
+            <td>Dec 24</td>
+            <td>Unpaid</td>
+            <td>
+              <button type="button" class = "add-button" onclick=click_event()>View</button>
+              <button type="button" class = "add-button">Cancel</button>
+
+            </td>
+            </tr>
+    
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    function click_event(){
+      window.location.href = "event.html"
+    }
+  </script>
+  {% endblock %}
+</main>
+</body>
+</html>
