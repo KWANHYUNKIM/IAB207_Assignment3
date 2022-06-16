@@ -29,16 +29,16 @@
     <div class="container-flex">
       <ul class="mini-bar nav justify-content-end">
         {% if current_user.is_authenticated  %}
-        <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="destinations/create">CREATE EVENT</a></li>
-        <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="event">EVENT INFORMATION</a></li>
-        <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="booking_history">BOOKING HISTORY </a></li>
+        <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="{{ url_for('destination.create') }}">CREATE EVENT</a></li>
+        <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="#">EVENT INFORMATION</a></li>
+        <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="#">BOOKING HISTORY </a></li>
         <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="logout">Logout</a></li> 
         <li href="#" class='fa fa-instagram nav-link text-light text-uppercase font-weight-bold px-3 fa-2x'></li>
         <li href="#" class='fa fa-facebook nav-link text-light text-uppercase font-weight-bold px-3 fa-2x'></li>
         <li href="#" class='fa fa-twitter nav-link text-light text-uppercase font-weight-bold px-3 fa-2x'></li>
         {% else %}
-        <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="event">EVENT INFORMATION</a></li>
-        <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="login">LOGIN</a></li> 
+        <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="#">EVENT INFORMATION</a></li>
+        <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="{{ url_for('login') }}">LOGIN</a></li> 
         <li href="#" class='fa fa-instagram nav-link text-light text-uppercase font-weight-bold px-3 fa-2x'></li>
         <li href="#" class='fa fa-facebook nav-link text-light text-uppercase font-weight-bold px-3 fa-2x'></li>
         <li href="#" class='fa fa-twitter nav-link text-light text-uppercase font-weight-bold px-3 fa-2x'></li>
@@ -50,7 +50,7 @@
   <nav class="main-navbar navbar-expand-md bg-white">
     <div class="container-flex">     
       <ul class="nav justify-content-center">
-        <li class="nav-link"><a class="nav-link text-black text-uppercase font-weight-bold px-5" href="destinations/1">PUBLIC EVENT</a></li>
+        <li class="nav-link"><a class="nav-link text-black text-uppercase font-weight-bold px-5" href="{{ url_for('destination.show',id=1) }}">PUBLIC EVENT</a></li>
         <li class="nav-link"><a class="nav-link text-black text-uppercase font-weight-bold px-5" href="#">BOOK WINE TASTING</a></li>
         <li class="nav-link"><a class="nav-link text-black text-uppercase font-weight-bold px-5" href="#">ACTIVE WINERY</a></li>
         <li><img src="{{ url_for('static', filename='img/winery_logo.png') }}" alt="" class = "" /></li>
