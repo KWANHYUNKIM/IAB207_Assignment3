@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms.fields import TextAreaField, SubmitField, StringField, PasswordField
+from wtforms.fields import TextAreaField, SubmitField, StringField, PasswordField, IntegerField
 from wtforms.validators import InputRequired, Length, EqualTo,Email
 from flask_wtf.file import FileRequired, FileField, FileAllowed
 
@@ -39,3 +39,8 @@ class RegisterForm(FlaskForm):
 class CommentForm(FlaskForm):
   text = TextAreaField('Comment', [InputRequired()])
   submit = SubmitField('Create')  
+  
+#User ticket
+class TicketForm(FlaskForm):
+    ticket_quantity = IntegerField('Quantity', validators= [InputRequired()])
+    submit = SubmitField('Create')

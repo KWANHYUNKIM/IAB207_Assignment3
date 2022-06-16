@@ -13,12 +13,6 @@ def index():
       
     return render_template('base.html',destinations=destinations)
 
-@mainbp.route('/ticket')
-def indext():
-    destinations = Destination.query.all()
-    
-    return render_template('ticket.html',destinations=destinations)
-
 @mainbp.route('/detail_event')
 def detail_event():
     return render_template('event.html')

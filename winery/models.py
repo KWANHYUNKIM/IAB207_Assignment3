@@ -3,7 +3,7 @@ from datetime import datetime
 from flask_login import UserMixin
 
 class User(db.Model, UserMixin):
-    __tablename__='users' # good practice to specify table name
+    __tablename__='users' 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), index=True, unique=True, nullable=False)
     emailid = db.Column(db.String(100), index=True, nullable=False)
@@ -14,12 +14,14 @@ class User(db.Model, UserMixin):
     # relation to call user.comments and comment.created_by
     comments = db.relationship('Comment', backref='user')
 
+# all winery information for client
 class Destination(db.Model):
     __tablename__ = 'destinations'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80))
     description = db.Column(db.String(200))
     image = db.Column(db.String(400))
+    # ... Ticket Quantity / Ticket Price
     ticket_quantity = db.Column(db.Integer)
     price = db.Column(db.Integer)
     # ... Create the Comments db.relationship
@@ -41,3 +43,14 @@ class Comment(db.Model):
     def __repr__(self):
         return "<Comment: {}>".format(self.text)
 
+class Ticket(db.Model):
+    __tablename__ = 'tickets'
+    id = db.Column(db.Integer, primary_key = True)
+    buy_ticket = db.Column(db.Integer)
+    create_at = db.Column(db.DateTime, default = datetime.now())
+    #add the foreign keys
+    buyer_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    seller_id = db.Column(db.Integer, db.ForeignKey('destinations.id'))
+    ticket_quantity = db.Column(db.Integer, db.ForeignKey('destinations.ticket_quantity'))
+    
+    

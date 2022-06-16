@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for
-from .models import Destination, Comment
-from .forms import DestinationForm, CommentForm
+from .models import Destination, Comment, Ticket
+from .forms import DestinationForm, CommentForm, TicketForm 
 from . import db
 import os
 from werkzeug.utils import secure_filename
@@ -71,4 +71,21 @@ def comment(destination):
     # using redirect sends a GET request to destination.show
     return redirect(url_for('destination.show', id=destination))
 
+@bp.route('/<destination>/ticket', methods = ['GET', 'POST'])
+@login_required
+def ticket(destination):    
+    form = TicketForm()
+    seller_id = Destination.query.filter_by(id=destination).first()
+    Ticket_quantity = Destination.query.filiter_by(ticket_quantity = destination).first()
     
+    if form.validate_on_submit():  
+        ticket = Ticket(buy_ticket = form.ticket_quantity.data,
+                        seller_id = seller_id,
+                        buyer_id = current_user,
+                        ticket_quantity = Ticket_quantity); 
+        
+        db.session.add(ticket) 
+        db.session.commit()
+        print('Your comment has been added', 'success') 
+    
+    return redirect(url_for('ticket', id=destination)) 
