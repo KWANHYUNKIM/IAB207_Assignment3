@@ -1,5 +1,5 @@
 #import flask module from Flask package
-from flask import Flask 
+from flask import Flask ,render_template
 from flask_bootstrap import Bootstrap4
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
@@ -16,7 +16,10 @@ def create_app():
     app=Flask(__name__)  
     #we use this utility module to display forms quickly
     bootstrap = Bootstrap4(app)
-    
+    @app.errorhandler(404) 
+    #inbuilt function which takes error as parameter 
+    def not_found(e): 
+        return render_template("404.html")
     app.secret_key ='somerandomvalue'
     #Configue and initialise DB
     app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///winery.sqlite'
@@ -40,8 +43,6 @@ def create_app():
     app.register_blueprint(destinations.bp)
     from . import auth
     app.register_blueprint(auth.bp)
-    
-    
     
     return app
 
