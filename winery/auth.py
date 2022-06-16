@@ -3,7 +3,7 @@ from .forms import LoginForm, RegisterForm
 #new imports:
 from flask_login import login_user, login_required, logout_user
 from werkzeug.security import generate_password_hash,check_password_hash
-from .models import User
+from .models import User , Destination
 from . import db
 
 #create a blueprint
@@ -57,10 +57,11 @@ def login():
         else:
             flash(error)
     return render_template('user.html', form=login_form, heading='Login')
-@bp.route('/booking')
+@bp.route('/booking',methods = ['GET', 'POST'])
 @login_required
 def booking():
-     return render_template('booking_history.html')
+    form = Destination.query.filter_by(id=id).first()
+    return render_template('booking_history.html',form = form)
 @bp.route('/logout')
 @login_required
 def logout():

@@ -60,32 +60,11 @@ def comment(destination):
       comment = Comment(text=form.text.data,  
                         destination=destination_obj,
                         user=current_user) 
-      #here the back-referencing works - comment.destination is set
-      # and the link is created
+    
       db.session.add(comment) 
       db.session.commit() 
-
-      #flashing a message which needs to be handled by the html
-      #flash('Your comment has been added', 'success')  
+ 
       print('Your comment has been added', 'success') 
     # using redirect sends a GET request to destination.show
     return redirect(url_for('destination.show', id=destination))
 
-@bp.route('/<destination>/ticket', methods = ['GET', 'POST'])
-@login_required
-def ticket(destination):    
-    form = TicketForm()
-    seller_id = Destination.query.filter_by(id=destination).first()
-    Ticket_quantity = Destination.query.filiter_by(ticket_quantity = destination).first()
-    
-    if form.validate_on_submit():  
-        ticket = Ticket(buy_ticket = form.ticket_quantity.data,
-                        seller_id = seller_id,
-                        buyer_id = current_user,
-                        ticket_quantity = Ticket_quantity); 
-        
-        db.session.add(ticket) 
-        db.session.commit()
-        print('Your comment has been added', 'success') 
-    
-    return redirect(url_for('ticket', id=destination)) 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+{% from "bootstrap5/form.html" import render_form  %}
 {% block header %}
 <head>
   <!-- Required meta tags -->
@@ -132,189 +133,27 @@
           <div class = "row">
             <div class = "Upcoming-event col-lg">
               <hr>
-              <h2>Last Page</h2>
+              <h2>Winery Event</h2>
               <hr>
             </div>
           </div>
-          
-          <div class = "row">
-            <div class = "event col-lg">
-                <img src="{{ url_for('static', filename='/img/event_1.png') }}" alt="event_1" class = "img-thumbnail" />
-                <h4> Easter Family Fun Day at Sirromet – 17th April 2022 </h4>
-                <p>Yay – our popular Family Fun Day is back at Sirromet & just in time for Easter Sunday!<br>
-                  <br>
-                  Enjoy food, drinks, live music, free kids activities & a visit from the Easter Bunny.<br>
-                  Bring your picnic rug & enjoy a relaxing day out with family & friends. No bookings required.
-                </p>
-                <a href="{{url_for('main.detail_event') }}" class="btn btn-danger">Find out More ></a>
-                <br>
-                <br>
-            </div>
-          </div> 
-          <div class = "row">
-            <div class = "event col-lg">
-                <img src="{{ url_for('static', filename='/img/event_2.png') }}" alt="event_2" class = "img-thumbnail" />
-                <h4>Easter Sunday Lunch at Lurleen’s – 17th April 2022 – Fully Booked</h4>
-                <p>Looking for something special to do this Easter?<br><br> 
-                  Gather the family and enjoy a beautifully curated 4 course luncheon including beverages and special visit from the Easter bunny at Lurleen’s.<br>
-                </p>
-                <a href="{{url_for('main.detail_event') }}" class="btn btn-danger">Find out More ></a>
-                <br>
-                <br>
-            </div>
-          </div> 
-    
-          <div class = "row">
-            <div class = "event col-lg">
-              <img src="{{ url_for('static', filename='/img/event_3.png') }}" alt="event_3" class = "img-thumbnail" />
-              <h4>Wine Selectors 50 Best Tasting – 19th April 2022 – Fully Booked</h4>
-              <p>Crystalbrook Vincent • Brisbane City, QLD<br><br> 
-                Starts at A$139.00<br>
-              </p>
-              <a href="{{url_for('main.detail_event') }}" class="btn btn-danger">Find out More ></a>
-              <br>
-              <br>
-            </div>
-          </div> 
-
-          <div class = "row">
-            <div class = "event col-lg">
-              <img src="{{ url_for('static', filename='/img/event_4.png') }}" alt="event_4" class = "img-thumbnail" />
-              <h4>Urban Wine Walk - Brisbane (QLD) – 21th April 2022 – Fully Booked</h4>
-              <p>Multiple Venues • Brisbane, QLD<br><br> 
-                Starts at A$79.99<br>
-              </p>
-              <a href="{{url_for('main.detail_event') }}" class="btn btn-danger">Find out More ></a>
-              <br>
-              <br>
-            </div>
-          </div> 
-        </div>
-
-         <!-- Active event row-->
-          <div class = "container-flex">
-            <div class = "row">
-              <div class = "active_event col-lg">
-                <hr>
-                  <h2>Active event</h2>
-                <hr>
-              </div>
-            </div>
-     
-     
-            <div class = "row">
-              <div class = "event col-sm">
-               <img src="{{ url_for('static', filename='/img/event_5.png') }}" alt="event_5" class = "img-thumbnail" />
-                <h4>Mother’s Day Scenic Helicopter Flight for Two – Sunday 8th May 2022</h4>
-                <p>
-                    Threat mum this Mother’s day to an amazing 15-minute scenic flight over Sirromet Winery and breathtaking Moreton Bay.
-                 </p>
-                 <a href="{{url_for('main.detail_event') }}" class="btn btn-danger">Find out More ></a>
-              </div>
-            </div> 
-        
-            <div class = "row">
-              <div class = "event col-sm">
-                <img src="{{ url_for('static', filename='/img/event_6.png') }}" alt="event_6" class = "img-thumbnail" />
-                <h4>Women’s Wednesday Wine Club Winter Lunch – 15th June 2022</h4>
-                <p>Delve into the whimsical world of wine with Nadine Delahunty, Sirromet Family Ambassador (@nadinethewinequeen) and enjoy a spectacular 3-course lunch (with wines).<br> 
-                  Women’s Wednesday Wine Club events offer a unique opportunity to learn the intricacies of wine, in a fun, casual way, whilst meeting like-minded lovers of wine.
-                </p>
-                <a href="{{url_for('main.detail_event') }}" class="btn btn-danger">Find out More ></a>
-                <br>
-                <br>
-             </div>
-           </div> 
-
-            <div class = "row">
-             <div class = "event col-sm">
-                <img src="{{ url_for('static', filename='/img/event_7.png') }}" alt="event_7" class = "img-thumbnail" />
-                <h4>Sense of Taste Tarragindi Wine Fair</h4>
-                <p>
-                 Sat, May 28, 2:00 PM<br>
-                 Wellers Hill Bowls Club • Tarragindi, QLD<br>
-                 Starts at A$40.00<br>
-                </p>
-                <a href="{{url_for('main.detail_event') }}" class="btn btn-danger">Find out More ></a>
-             </div>
-            </div> 
-
-            <div class = "row">
-             <div class = "event col-sm">
-               <img src="{{ url_for('static', filename='/img/event_8.png') }}" alt="event_8" class = "img-thumbnail" />
-                <h4>Vintopid!</h4>
-                <p>
-                 Fri, May 13, 5:00 PM + 1 more event<br>
-                 Cloudland • Fortitude Valley, QLD<br>
-                 Starts at A$21.54
-                </p>
-                <a href="{{url_for('main.detail_event') }}" class="btn btn-danger">Find out More ></a>
-              </div>
-            </div> 
-          </div>
          
-        <!-- Past events-->          
-      <div class = "container-flex">
-        <div class = "row">
-          <div class = "past_event col-sm">
-            <hr>
-             <h2>Past events</h2>
-             <hr>
-          </div>
-        </div>
-        
-        <div class = "row">
-          <div class = "event col-sm">
-            <img src="{{ url_for('static', filename='/img/event_9.png') }}" alt="event_9" class = "img-thumbnail" />
-             <h4>Sunny's Wine Fair– March 29, 11:30 AM</h4>
-             <p>
-              Sunny's Margate Beach • Margate, QLD<br>
-              Starts at A$32.64
-             </p>
-             <a href="{{url_for('main.detail_event') }}" class="btn btn-danger">Find out More ></a>
-          </div>
-        </div>
-      
-        <div class = "row">
-          <div class = "event col-sm">
-              <img src="{{ url_for('static', filename='/img/event_10.png') }}" alt="event_10" class = "img-thumbnail" />
-              <h4>The Bubbles Festival Brisbane</h4>
-              <p>Fri, March 13, 6:00 PM + 2 more events<br>
-                Customs House • Brisbane City, QLD<br>
-                Starts at A$69.87
-              </p>
-              <a href="{{url_for('main.detail_event') }}" class="btn btn-danger">Find out More ></a>
-              <br>
-              <br>
-          </div>
-        </div> 
-
-        <div class = "row">
-          <div class = "event col-sm">
-            <img src="{{ url_for('static', filename='/img/event_11.png') }}" alt="event_11" class = "img-thumbnail" />
-             <h4>Sense of Taste Tarragindi Wine Fair</h4>
-             <p>
-              Sat, May 28, 2:00 PM<br>
-              Wellers Hill Bowls Club • Tarragindi, QLD<br>
-              Starts at A$40.00<br>
-             </p>
-             <a href="{{url_for('main.detail_event') }}" class="btn btn-danger">Find out More ></a>
-          </div>
-        </div> 
-
-        <div class = "row">
-          <div class = "event col-sm">
-            <img src="{{ url_for('static', filename='/img/event_12.png') }}" alt="event_12" class = "img-thumbnail" />
-             <h4>Cheese Degustation!</h4>
-             <p>
-              Fri, March 13, 5:00 PM + 1 more event<br>
-              35 Peel St • South Brisbane, QLD<br>
-              Starts at A$101.31<br>
-             </p>
-             <a href="{{url_for('main.detail_event') }}" class="btn btn-danger">Find out More ></a>
-          </div> 
-        </div> 
-      </div>
+          <div class = "row">
+            <div class = "event col-lg">
+              {% for destination in destinations %}
+                <img src= {{destination.image}} alt="event_1" class = "img-thumbnail" />
+                <h4> {{destination.name}} – 17th April 2022 -  </h4>
+                <p>price : {{destination.price}}<br><br>
+                   ticket : {{destination.ticket_quantity}}<br><br>
+                   description : {{destination.description}}
+                </p>
+                <a href="{{url_for('main.detail_event') }}" class="btn btn-danger">Find out More ></a>
+                <br>
+                <br>
+              {% endfor %}  
+            </div>
+          </div> 
+          
     <!-- Line Spacing -->
      <div class = "container-flex">
        <div class = "row">

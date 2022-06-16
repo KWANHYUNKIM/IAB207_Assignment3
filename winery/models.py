@@ -52,5 +52,5 @@ class Ticket(db.Model):
     buyer_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     seller_id = db.Column(db.Integer, db.ForeignKey('destinations.id'))
     ticket_quantity = db.Column(db.Integer, db.ForeignKey('destinations.ticket_quantity'))
-    
+
     
