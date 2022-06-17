@@ -1,1 +1,409 @@
-.
+<!DOCTYPE html>
+<html lang="en">
+{% block header %}
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--title -->
+  <title>Event-page</title>
+  <!-- link the CSS stylesheet -->
+  <link rel="stylesheet" href="{{url_for('static',filename='css/detail_event.css')}}" />
+  <!-- link the Merriweather font-->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet"/>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <!-- Google Font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100&display=swap" rel="stylesheet">
+  <!-- social media icon-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
+</head>
+<body>
+<header>
+   <!-- the mini-navbar -->
+   <nav class="mini-navbar navbar-expand-md navbar-light">
+    <div class="container-flex">
+      <ul class="mini-bar nav justify-content-end">
+        {% if current_user.is_authenticated  %}
+        <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="{{ url_for('destination.create') }}">CREATE EVENT</a></li>
+        <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="#">EVENT INFORMATION</a></li>
+        <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="{{ url_for('auth.booking') }}">BOOKING HISTORY </a></li>
+        <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="{{ url_for('auth.logout') }}">Logout</a></li> 
+        <li href="#" class='fa fa-instagram nav-link text-light text-uppercase font-weight-bold px-3 fa-2x'></li>
+        <li href="#" class='fa fa-facebook nav-link text-light text-uppercase font-weight-bold px-3 fa-2x'></li>
+        <li href="#" class='fa fa-twitter nav-link text-light text-uppercase font-weight-bold px-3 fa-2x'></li>
+        {% else %}
+        <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="#">EVENT INFORMATION</a></li>
+        <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="{{ url_for('auth.login') }}">LOGIN</a></li> 
+        <li href="#" class='fa fa-instagram nav-link text-light text-uppercase font-weight-bold px-3 fa-2x'></li>
+        <li href="#" class='fa fa-facebook nav-link text-light text-uppercase font-weight-bold px-3 fa-2x'></li>
+        <li href="#" class='fa fa-twitter nav-link text-light text-uppercase font-weight-bold px-3 fa-2x'></li>
+      </ul>
+      {% endif %}
+    </div>  
+  </nav>
+   <!-- the main-navbar -->
+  <nav class="main-navbar navbar-expand-md bg-white">
+    <div class="container-flex">     
+      <ul class="nav justify-content-center">
+        <li class="nav-link"><a class="nav-link text-black text-uppercase font-weight-bold px-5" href="{{ url_for('destination.show',id=1) }}">PUBLIC EVENT</a></li>
+        <li class="nav-link"><a class="nav-link text-black text-uppercase font-weight-bold px-5" href="#">BOOK WINE TASTING</a></li>
+        <li class="nav-link"><a class="nav-link text-black text-uppercase font-weight-bold px-5" href="#">ACTIVE WINERY</a></li>
+        <li><img src="{{ url_for('static', filename='img/winery_logo.png') }}" alt="" class = "" /></li>
+        <li class="nav-link"><a class="nav-link text-black text-uppercase font-weight-bold px-5" href="#">MEMBERSHIP </a></li>
+        <li class="nav-link"><a class="nav-link text-black text-uppercase font-weight-bold px-5" href="#">WINERY NEWS </a></li>
+      </ul>
+      </div>
+  </nav> 
+  {% endblock %} 
+</header>
+ {% block content %} 
+  <!-- the content -->
+   <main> 
+    <div class ="container-flex">
+      <div class = "row">
+        <div class = "main_img col">
+          <img src ="{{ url_for('static', filename='img/event_1_main.jpg') }}" alt ="background" class ="background img-response">
+        </div>  
+      <div>      
+    </div>
+      <!-- sub-image and google-calender event-->
+      <div class = "container-flex">
+        <div class = "row">
+          <div class = "col-sm-4">
+            </div>
+          <div class = "event_img col-sm-4">
+              <img src="{{ url_for('static', filename='img/event_1_second.png') }}" alt="event_1" class = "event_img img-response" />
+          </div>
+          <div class = "google-calender col-sm-4">
+            <iframe height="450" src="https://www.google.com/calendar/embed?src=equria%40gmail.com&ctz=Australia" frameborder="0" width="400" scrolling="no"></iframe>
+            <br>
+            <button type="button">TICKETS</button>
+          </div>
+        </div>
+      </div>
+      <!-- album-image -->
+      <div class = "container-flex">
+        <div class = "row">
+          <div class = "col-sm-2">
+          </div>
+          <div class = "col-sm-2">
+          </div>
+          <div class = "small-event col-sm-2">
+            <img src="{{ url_for('static', filename='img/small_event_1.jpg') }}" alt="event_1" class = "small_event img-response" />
+            <img src="{{ url_for('static', filename='img/small_event_2.jpg') }}" alt="event_1" class = "small_event img-response" />
+            <img src="{{ url_for('static', filename='img/small_event_3.jpg') }}" alt="event_1" class = "small_event img-response" />
+          </div>
+          <div class = "small-event col-sm-2">
+            <img src="{{ url_for('static', filename='img/small_event_4.jpg') }}" alt="event_1" class = "small_event img-response" />
+            <img src="{{ url_for('static', filename='img/small_event_5.jpg') }}" alt="event_1" class = "small_event img-response" />
+            <img src="{{ url_for('static', filename='img/small_event_6.jpg') }}" alt="event_1" class = "small_event img-response" />
+          </div>
+          <div class = "col-sm-2">
+          </div>
+          <div class = "col-sm-2">
+          </div>
+        </div>
+      </div>
+      <!--description part -->
+      <div class = "container-flex">
+        <div class = "row">
+          <div class = "col-sm-4">
+          </div>
+          <div class = "col-sm-4">
+            <p>
+            The Swan Valley region holds a truly unique history influenced by the traditional owners of the land Mandoon Estate is located on Noongar land.<br><br>
+            In keeping with its indigenous heritage, Mandoon Estate offers a unique opportunity to listen to the stories of this area and learn about local indigenous food and culture from Noongar Elder, Dale Tilbrook.<br><br>
+            Taste some traditional bush food with Dale and listen to stories from decades past about indigenous farming methods and the history of the Noongar peoples from this ancient land.<br><br>
+            Start off with a glass of sparkling wine in Cellar Door whilst a wine educator runs you through the interesting history of Mandoon Estate. Did you know that The Wadjuk had lived in 
+            “Man-done” - a woodland or place of tree thickets - and harvested the wealth of this valley for thousands of years?<br><br>
+          </p>
+          </div>
+          <div class = "col-sm-4">
+          </div>
+        </div>
+      </div>
+      <!-- information part-->
+      <div class = "container-flex">
+        <div class = "row">
+          <div class = "col-sm-2">
+          </div>
+          <div class = "col-sm-2">
+          </div>
+          <div class = "column_1 col-sm-2">
+            <h2>LOCATION</h2>
+            <p>Mandoon Estate Cellar Door<br>
+              10 Harris Road, Caversham, WA
+            </p>
+          </div>
+          <div class = "column_2 col-sm-2">
+            <h2>WHEN</h2>
+            <p>21th April 2022<br>
+          </div>
+          <div class = "col-sm-2">
+          </div>
+          <div class = "col-sm-2">
+          </div>
+        </div>
+      </div>
+      <!--Information 2 part-->
+      <div class = "container-flex">
+        <div class = "row">
+          <div class = "col-sm-2">
+          </div>
+          <div class = "col-sm-2">
+          </div>
+          <div class = "column_3 col-sm-2">
+            <h2>COST</h2>
+            <p>$79 per person</p>
+          </div>
+          <div class = "column_4 col-sm-2">
+            <h2>INCLUDE</h2>
+            <p>guided bush tucker talk and tasting,<br>
+               glass of sparkling wine on arrival
+          </div>
+          <div class = "col-sm-2">
+          </div>
+          <div class = "col-sm-2">
+          </div>
+        </div>
+      </div>
+      <!--Information 3 part-->
+      <div class = "container-flex">
+        <div class = "row">
+          <div class = "col-sm-4">
+          </div>
+          <div class = "column_5 col-sm-4">
+              <h2>WHAT YOU RECEIVE</h2>
+
+             <p> - 30+ Complimentary Tastings (One Per Variety Per Person)<br><br>
+              
+              - 1 x $10 Food Voucher to Spend at your Nominated Starting Venue (Before 1pm)<br><br>
+              
+              - 1 x $25 Voucher for Event Day Wine Orders (Six Pack Minimum / Subject to Participating Producers)<br><br>
+              
+              - Official Event Wristband & Tasting Glass<br><br>
+              
+              * Please Note - Maximum of Six Tickets Per Transaction
+
+              <h2>EVENT REGISTRATION / WRISTBAND & VOUCHER COLLECTION</h2>
+              <p>
+                Event wristbands, tasting glasses & vouchers will need to be collected 
+                on the day of the event prior to commencing the Urban Wine Walk. The collection point is as follows:<br><br>
+                
+                Where - Embassy Bar & Kitchen (214 Elizabeth St, Brisbane City)/<br><br>
+                
+                ​Date & Time - Saturday 14th May (11-1pm)
+              <h2>COVID-19</h2>
+              <p> 
+                If we are unable to run the event as planned due to COVID-19 all ticket 
+                holders will receive a full refund via Eventbrite.
+              </p>
+              <h2>GETTING AROUND</h2>
+              <p>
+                Aside from the incredible wines, one of the best things about the Urban Wine Walk is 
+                that it's a completely self-guided day out!
+                What that means is once you've been to your nominated starting location you can go 
+                where you want, when you want!<br><br>
+                
+                **Sorry kids, Urban Wine Walk is strictly 18 Years and Over!
+              </p>
+          </div>
+          <div class = "col-sm-4">
+          </div>
+        </div>
+      </div>
+      <!-- tag event -->
+      <div class = "container-flex">
+        <div class = "row">
+          <div class = "col-sm-4">
+          </div>
+          <div class = "tag-event col-sm-4">
+             <p>
+              <br><br>
+               tags,
+             </p>
+             <button type="button">Australia event</button>
+             <button type="button">Queenland Events</button>
+             <button type="button">#tour</button>
+             <button type="button">#wine</button>
+             <button type="button">#walking</button><br>
+
+             <button type="button">Brisbane Parites</button>
+             <button type="button">Brisbane Food & Drink Parties</button>
+             <button type="button">#Thing to do in Brisbane</button>
+             <br><br>
+             <p>Share with friends</p>
+
+             <a href="#" class="fa fa-facebook"></a>  
+             <a href="#" class="fa fa-twitter"></a>
+             <a href="#" class="fa fa-linkedin"></a>  
+             <a href="#" class="fa fa-instagram"></a>
+             <a href="#" class="fa fa-youtube"></a>     
+          </div>
+          <div class = "col-sm-4">
+          </div>
+        </div>
+      </div>
+      <!-- advertising part -->
+      <div class = "container-flex">
+        <div class = "row">
+          <div class = "col-sm-4">
+          </div>
+          <div class = "Subscribe-Follow col-sm-4">
+           <hr>
+            <p>
+              Neightbourhood Events co<br><br>
+              Origanizer of Urban Wine Walk - Brisbane(QLD)<br><br>
+              <button type="button">Follow</button>
+              <button type="button">Contact</button>
+            </p>
+           <hr>
+           <h2><h2> More event from this organiser</h2></h2>     
+          </div>
+          <div class = "col-sm-4">
+          </div>
+        </div>
+      </div>
+
+      <div class = "container-flex">
+        <div class = "row">
+          <div class = "col-sm-2">
+          </div>
+          <div class = "col-sm-2">
+          </div>
+          <div class = "More-event col-sm-2">
+
+            <h4>Urban Wine Walk - Adelaid West End(SA)</h4>
+            <h6>Sat, May7, 12:00 PM</h6> 
+            <p>
+              Starts at $79.99<br>
+              Neightbourhood Events Co<br>
+            </p>
+          </div>
+          <div class = "More-event col-sm-2">
+            <img src="{{ url_for('static', filename='img/sub_event_1.png') }}" alt="event_1" class = "sub_event img-response" />
+          </div>
+          <div class = "col-sm-2">
+          </div>
+          <div class = "col-sm-2">
+          </div>
+        </div>
+      </div>
+      <div class = "container-flex">
+        <div class = "row">
+          <div class = "col-sm-2">
+          </div>
+          <div class = "col-sm-2">
+          </div>
+          <div class = "More-event col-sm-2">
+
+            <h4>Brisbane Rum Revolution 2022</h4>
+            <h6>Sat, May21, 12:00 PM</h6> 
+            <p>
+              Starts at $79.99<br>
+              Neightbourhood Events Co<br>
+            </p>
+          </div>
+          <div class = "More-event col-sm-2">
+            <img src="{{ url_for('static', filename='img/sub_event_2.png') }}" alt="event_1" class = "sub_event img-response" />
+          </div>
+          <div class = "col-sm-2">
+          </div>
+          <div class = "col-sm-2">
+          </div>
+        </div>
+      </div>
+
+      <div class = "container-flex">
+        <div class = "row">
+          <div class = "col-sm-2">
+          </div>
+          <div class = "col-sm-2">
+          </div>
+          <div class = "More-event col-sm-2">
+
+            <h4>Brisbane GIN FESTIVAL</h4>
+            <h6>Sat, May28, 12:00 PM</h6> 
+            <p>
+              Starts at $79.99<br>
+              Neightbourhood Events Co<br>
+            </p>
+          </div>
+          <div class = "More-event col-sm-2">
+            <img src="{{ url_for('static', filename='img/sub_event_3.png') }}" alt="event_1" class = "sub_event img-response" />
+          </div>
+          <div class = "col-sm-2">
+          </div>
+          <div class = "col-sm-2">
+          </div>
+        </div>
+      </div>
+      {% endblock %} 
+      <!--the footer-->
+      <div class = "minibar container-flex">
+        <div class = "row">
+          <div class="menu col">
+              <h6>MENU</h6> 
+              <p> wines <br> 
+                  Grand Salon<br>
+                  Referrals<br>
+                  History<br>
+                  Contact
+              </p>
+          </div>
+          <div class="Event col">
+              <h6>EVENT</h6>
+              <p>
+                Upcoming events<br>
+                Active events<br>
+                Past events
+              </p>
+          </div>
+          <div class="visit col">
+            <h6>VISIT US:</h6> 
+            <p>
+              Brotherhood Winery<br>
+              100 Brotherhood Plaza Dr.<br>
+              Washingtonville, NY 10992<br>
+            </p>
+            <h6>HOURS</h6>
+            <p>
+              Public Tastings are available Tuesday-Sunday.<br><br>
+
+              Saturday: 11:00 AM - 6:00 PM<br>
+              Sunday: 11:00 AM - 5:00 PM<br>
+              Monday: CLOSED<br>
+              Tuesday: 11:00 AM - 5:00 PM<br>
+              Wednesday: 11:00 AM - 5:00 PM<br>
+              Thursday: 11:00 AM - 5:00 PM<br>
+              Friday: 11:00 AM - 6:00 PM<br>
+            </p>
+            <h6>PHONE</h6>
+            <p>
+              0421-356-941
+            </p>
+          </div>
+          <div class="search col">
+          <h6>SEARCH</h6>
+            <input type="text" placeholder="Search..."> 
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- the footer -->
+    <footer>
+   
+      <span>Winery<br />Copyright &copy; 2022 </span>
+    </footer>
+  </body>
+</html>
+
+
+
+
+
+
+     

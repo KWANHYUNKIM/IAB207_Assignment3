@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!--title -->
+  <title>event-creation</title>
+  <!-- link the CSS stylesheet -->
+  <link rel="stylesheet" href="{{url_for('static',filename='css/event_creation.css')}}" />
+  <!-- link the Merriweather font-->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet"/>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <!-- Google Font-->
+  <link rel="preconnect" href="https∫∫://fonts.googleapis.com">
+  <link href='https://fonts.googleapis.com/css?family=Koulen' rel='stylesheet'>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100&display=swap" rel="stylesheet">
+  <!-- social media icon-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/98ba2e2a27.js" crossorigin="anonymous"></script>
+</head>
+<body> 
+  <!-- the header -->
+<header>
+  <nav class="mini-navbar navbar-expand-md navbar-light">
+    <div class="container-flex">
+      <ul class="mini-bar nav justify-content-end">
+        <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="event_creation">CREATE EVENT</a></li>
+        <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="event">EVENT INFORMATION</a></li>
+        <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="booking_history">BOOKING HISTORY </a></li>
+        <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="#">LOGIN</a></li> 
+        <li href="#" class='fa fa-instagram nav-link text-light text-uppercase font-weight-bold px-3 fa-2x'></li>
+        <li href="#" class='fa fa-facebook nav-link text-light text-uppercase font-weight-bold px-3 fa-2x'></li>
+        <li href="#" class='fa fa-twitter nav-link text-light text-uppercase font-weight-bold px-3 fa-2x'></li>
+      </ul>
+    </div>  
+  </nav>
+</header>
+
+<main> 
+  <div class ="container-flex">
+    <div class='row'>
+      <div class='title col-sm-4 justify-content-sm-center'>
+        <h2>Let's build<br> your first<br> event</h2>
+        <h4>Tell us a bit more about yourself<br> so we can help create the perfect event</h4><br>
+        <p>Step 1 of 3: About you</p>
+        <img src="../img/rectangle_1.png" alt="" class ="center-block"/>
+      </div> 
+      <div class='content col-xxl'>
+        <div class = 'select_column_1'>
+          <i class="fa-solid fa-carrot fa-2x"></i>  
+          <h2>what's your level of experience hosting events?</h2><br>
+          <form>
+            <select aria-label="State">
+              <option value = "cover" disabled>select your experience</option>
+              <option>Newbie - This is my first event</option>
+              <option>Beginner - Not my first time, but I still need experience</option>
+              <option>Intermediate - I have some past experience hosting events</option>
+              <option>Expert - I have plenty of expereince hosting events</option>
+            </select>  
+        </div>
+
+        {% block header %}
+        {% endblock %}
+
+        <div class = 'select_column_2'>
+          <i class="fa-solid fa-cannabis fa-2x"></i>  
+          <h2>How did you first hear about Eventbrite?</h2><br>
+          <form>
+            <select aria-label="State">
+              <option value = "cover" disabled>Slect an option</option>
+              <option>Friend or colleague</option>
+              <option>Social media post</option>
+              <option>Online search</option>
+              <option>Oline ad</option>   
+              <option>3rd party blog or forum</option>   
+              <option>The Eventbrite blog</option>
+              <option>I attended an event ticketed by Eventbrite</option>
+              <option>Other</option>     
+            </select>
+          </form>     
+       </div>
+
+       <div class = 'select_column_3'>
+        <i class="fa-solid fa-cheese fa-2x"></i> 
+         <h2>How many people help paln your events online?</h2><br>
+         <form>
+            <select aria-label="State">
+              <option value = "cover" disabled>Slect quantity</option>
+             <option>Just me</option>
+             <option>1 - 5 people</option>
+             <option>6 - 10 people</option>
+             <option>11 - 20 people</option>   
+             <option>More than 20</option>     
+            </select>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class ="container-flex">
+    <div class='row'>
+      <div class='title col-sm-4'>
+      </div>
+
+      <div class='col-xxl'> 
+          <div class ='basic-info'>
+            <h1>Basic Info</h1>
+            <p>Name your event and tell event-goers why they should come. 
+            Add details that highlight what makes it unique.</p><br>
+            <form action="{{ }}" method="post">
+            </form>
+            
+          </div> 
+
+          <div class ='text-function'>
+            <textarea type ="text" placeholder="Event Title*&#13;&#10;Be clear and descriptive"></textarea><br>
+            <textarea type ="text" placeholder="Organiser*&#13;&#10;Tell attendees who is organising this event"></textarea><br>
+            <p>This profile describes a unique organiser and shows all of the events on one page. 
+            View Organiser Info</p><br>
+          </div>
+        
+          <div class ='tag-function'>
+            <h1>Tags</h1>
+            <p>Improve discoverability of your event by adding tags relevant to the subject matter.</p><br>
+            <textarea type ="text" placeholder="Add search keywords to your event"></textarea><br>
+            <button type="button" class = "add-button">Add</button>
+            <hr>
+
+          </div>
+
+          <div class = 'location'>
+            <h1>Location</h1>
+            <p>Help people in the area discover your event and let attendees know where to show up.</p><br>
+            <button type="button" class = "location-button">Venue</button>
+            <button type="button" class = "location-button">Online event</button>
+            <button type="button" class = "location-button">announced</button><br><br>
+            <p>Venue location</p>
+            <textarea type ="text" placeholder="Search for a venue or address"></textarea>
+            <hr>
+
+          </div>
+
+         <div class = 'Date_time'>
+           <h1>Date and time</h1>
+           <p>Tell event-goers when your event starts and ends so they can make plans to attend.</p><br>
+           <button type="button" class = "Date-button">Single Event</button>
+           <button type="button" class = "Date-button_">Recurring</button><br>
+           <p>Single event happens once and can last multiple days</p><br>        
+           <textarea type ="text" placeholder="Event start*&#13;&#10;dd/mm/yyyy"></textarea>
+           <textarea type ="text" placeholder="Event end*&#13;&#10;dd/mm/yyyy"></textarea>
+           <hr>
+
+          </div>
+       
+          <div class = 'Image'>
+            <h1>Image</h1>
+            <p>You can attach your main images</p>
+            <textarea type ="text" placeholder="space of images"></textarea><br><br>
+            <button type="button" class = "Attach-button">Attach</button>
+            <button type="button" class = "cancel-button">Cancel</button>
+          </div>
+
+          <div class = 'description'>
+            <h1>Description</h1>
+            <textarea type ="text" placeholder="description"></textarea>
+
+          </div>
+
+          <div class ='submit'>
+            <h1>Submit</h1>
+          </div>
+
+
+          <div class = 'final-button'>
+            <button type="button" class = "skip-button">SKIP</button>
+            <button type="button" class = "next-button">NEXT</button> 
+          </div>
+        </div>
+      </div>
+    </div>
+  
+</main>
+</body>
+</html>
