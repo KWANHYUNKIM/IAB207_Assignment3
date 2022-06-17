@@ -14,7 +14,7 @@ def show(id):
     destination = Destination.query.filter_by(id=id).first()
     # create the comment form
     cform = CommentForm()    
-    return render_template('destinations/show.html', destination=destination, form=cform)
+    return render_template('destinations/event.html', destination=destination, form=cform)
 
 @bp.route('/create', methods = ['GET', 'POST'])
 @login_required

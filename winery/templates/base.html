@@ -47,19 +47,6 @@
       {% endif %}
     </div>  
   </nav>
-   <!-- the main-navbar -->
-  <nav class="main-navbar navbar-expand-md bg-white">
-    <div class="container-flex">     
-      <ul class="nav justify-content-center">
-        <li class="nav-link"><a class="nav-link text-black text-uppercase font-weight-bold px-5" href="{{ url_for('destination.show',id=1) }}">COMMUNICATION</a></li>
-        <li class="nav-link"><a class="nav-link text-black text-uppercase font-weight-bold px-5" href="#">BOOK WINE TASTING</a></li>
-        <li class="nav-link"><a class="nav-link text-black text-uppercase font-weight-bold px-5" href="#">ACTIVE WINERY</a></li>
-        <li><img src="{{ url_for('static', filename='img/winery_logo.png') }}" alt="" class = "" /></li>
-        <li class="nav-link"><a class="nav-link text-black text-uppercase font-weight-bold px-5" href="#">MEMBERSHIP </a></li>
-        <li class="nav-link"><a class="nav-link text-black text-uppercase font-weight-bold px-5" href="#">WINERY NEWS </a></li>
-      </ul>
-      </div>
-  </nav> 
   {% endblock %}
     
   </header>
@@ -146,7 +133,7 @@
                        ticket : {{destination.ticket_quantity}}<br><br>
                        description : {{destination.description}}
                     </p>
-                    <a href="{{url_for('main.detail_event') }}" class="btn btn-danger">Find out More ></a>
+                    <a href="{{ url_for('destination.show',id=1) }}" class="btn btn-Light">Find out More ></a>
                     <br>
                     <br>
                   {% endfor %}  

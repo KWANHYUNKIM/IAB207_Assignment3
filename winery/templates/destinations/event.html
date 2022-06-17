@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+{% from "bootstrap5/form.html" import render_form  %}
 {% block header %}
 <head>
   <!-- Required meta tags -->
@@ -44,19 +45,6 @@
       {% endif %}
     </div>  
   </nav>
-   <!-- the main-navbar -->
-  <nav class="main-navbar navbar-expand-md bg-white">
-    <div class="container-flex">     
-      <ul class="nav justify-content-center">
-        <li class="nav-link"><a class="nav-link text-black text-uppercase font-weight-bold px-5" href="{{ url_for('destination.show',id=1) }}">PUBLIC EVENT</a></li>
-        <li class="nav-link"><a class="nav-link text-black text-uppercase font-weight-bold px-5" href="#">BOOK WINE TASTING</a></li>
-        <li class="nav-link"><a class="nav-link text-black text-uppercase font-weight-bold px-5" href="#">ACTIVE WINERY</a></li>
-        <li><img src="{{ url_for('static', filename='img/winery_logo.png') }}" alt="" class = "" /></li>
-        <li class="nav-link"><a class="nav-link text-black text-uppercase font-weight-bold px-5" href="#">MEMBERSHIP </a></li>
-        <li class="nav-link"><a class="nav-link text-black text-uppercase font-weight-bold px-5" href="#">WINERY NEWS </a></li>
-      </ul>
-      </div>
-  </nav> 
   {% endblock %} 
 </header>
  {% block content %} 
@@ -341,6 +329,24 @@
           </div>
         </div>
       </div>
+      <!-- Comments -->  
+      <div class = "container-flex">
+        <div class = "row">
+          <div class = "col-sm-4">
+          </div>
+          <div class = "col-sm-4">
+            {{render_form(form, "/destinations/{0}/comment".format(destination.id))}}   
+            {% for comment in destination.comments %}
+            <b>{{comment.user.name}} 
+              <span class="ml-2 text-muted">{{comment.created_at}}</span></b>
+              <p>{{comment.text}}</p>
+          </div>
+          {% endfor %}
+          <div class = "col-sm-4">
+          </div>
+        </div>
+      </div>
+     
       {% endblock %} 
       <!--the footer-->
       <div class = "minibar container-flex">

@@ -60,7 +60,7 @@ def login():
 @bp.route('/booking',methods = ['GET', 'POST'])
 @login_required
 def booking():
-    return render_template('booking_history.html')
+   return render_template('tickets/booking_history.html')
 @bp.route('/logout')
 @login_required
 def logout():

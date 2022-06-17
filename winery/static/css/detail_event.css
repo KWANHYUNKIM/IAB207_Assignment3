@@ -11,31 +11,7 @@ https://scotch.io/courses/create-a-beautiful-htmlcss-website
   }
   /* main navigation */
 
-  .main-navbar {
-    background-color: #fff;
-  }
-
-  .main-navbar img{
-    float: left;
-    width: 150px;
-    height : 150px;
-  }
-  .main-navbar{
-
-    text-align: center;
-  }
-  .main-navbar ul li{
-    
-    display: flex;
-    align-items: center;
-    height : 150px;
-    column-width: 200px;
-    margin : 0;
-    text-align : center;
-    padding : 0;
-    font-size:20px;
-  } 
-  /* main event picture  */
+  
   
   .main_img img
   {
@@ -199,10 +175,19 @@ https://scotch.io/courses/create-a-beautiful-htmlcss-website
     margin: 5px 8px;
     font-size: 12px;  
   }
+  .comments p {
+    text-align: center;
+    margin : 0;
+  }
+  .comments b {
+    text-align: center;
+    margin : 0;
+  }
   /* contact us and bottom of mini bar  */
   .minibar h6{
     color :#c0a46c;
     text-align: center;
+   
   }
   .minibar p {
     text-align: center;
@@ -211,9 +196,7 @@ https://scotch.io/courses/create-a-beautiful-htmlcss-website
     float: none; 
     margin:0 auto;
   }
-  .search{
-    text-align: center;
-  }
+
   /* styling our footer */
   footer {
     background: #222;
