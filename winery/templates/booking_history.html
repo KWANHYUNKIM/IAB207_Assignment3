@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-{% extends "base.html" %}
+
 
 {% block header %}
   <head>
@@ -32,14 +32,14 @@
         <ul class="mini-bar nav justify-content-end">
           {% if current_user.is_authenticated  %}
           <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="{{ url_for('destination.create') }}">CREATE EVENT</a></li>
-          <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="{{ url_for('base') }}">EVENT INFORMATION</a></li>
-          <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="#">BOOKING HISTORY </a></li>
+          <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="{{ url_for('main.index') }}">EVENT INFORMATION</a></li>
+          <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="{{ url_for('auth.booking') }}">BOOKING HISTORY </a></li>
           <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="{{ url_for('auth.logout') }}">Logout</a></li> 
           <li href="#" class='fa fa-instagram nav-link text-light text-uppercase font-weight-bold px-3 fa-2x'></li>
           <li href="#" class='fa fa-facebook nav-link text-light text-uppercase font-weight-bold px-3 fa-2x'></li>
           <li href="#" class='fa fa-twitter nav-link text-light text-uppercase font-weight-bold px-3 fa-2x'></li>
           {% else %}
-          <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="{{ url_for('base') }}">EVENT INFORMATION</a></li>
+          <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="{{ url_for('main.index') }}">EVENT INFORMATION</a></li>
           <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="{{ url_for('auth.login') }}">LOGIN</a></li> 
           <li href="#" class='fa fa-instagram nav-link text-light text-uppercase font-weight-bold px-3 fa-2x'></li>
           <li href="#" class='fa fa-facebook nav-link text-light text-uppercase font-weight-bold px-3 fa-2x'></li>
@@ -155,13 +155,13 @@
       </div>
     </div>
   </div>
-  
+  {% endblock %}
   <script>
     function click_event(){
-      window.location.href = "event.html"
+      window.location.href = "base.html"
     }
   </script>
-  {% endblock %}
+ 
 </main>
 </body>
 </html>

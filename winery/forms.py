@@ -25,11 +25,11 @@ class LoginForm(FlaskForm):
 
 #User register
 class RegisterForm(FlaskForm):
-    user_name=StringField("User Name", validators=[InputRequired()])
+    user_name=StringField("User Name", validators=[InputRequired(), Length(min=3, max = 20)])
     email_id = StringField("Email Address", validators=[Email("Please enter a valid email")])
     
     #linking two fields - password should be equal to data entered in confirm
-    password=PasswordField("Password", validators=[InputRequired(),
+    password=PasswordField("Password", validators=[InputRequired(),Length(min =4 , max = 20) ,
                   EqualTo('confirm', message="Passwords should match")])
     confirm = PasswordField("Confirm Password")
     #submit button
@@ -42,5 +42,5 @@ class CommentForm(FlaskForm):
   
 #User ticket
 class TicketForm(FlaskForm):
-    ticket_quantity = IntegerField('Quantity', validators= [InputRequired()])
+    ticket_quantity = IntegerField('Quantity', validators= [InputRequired(), Length(min=1 , max= 4)])
     submit = SubmitField('Create')

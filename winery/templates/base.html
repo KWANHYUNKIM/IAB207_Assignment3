@@ -31,14 +31,14 @@
       <ul class="mini-bar nav justify-content-end">
         {% if current_user.is_authenticated  %}
         <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="{{ url_for('destination.create') }}">CREATE EVENT</a></li>
-        <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="#">EVENT INFORMATION</a></li>
+        <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="{{ url_for('main.index') }}">EVENT INFORMATION</a></li>
         <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="{{ url_for('auth.booking') }}">BOOKING HISTORY </a></li>
         <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="{{ url_for('auth.logout') }}">Logout</a></li> 
         <li href="#" class='fa fa-instagram nav-link text-light text-uppercase font-weight-bold px-3 fa-2x'></li>
         <li href="#" class='fa fa-facebook nav-link text-light text-uppercase font-weight-bold px-3 fa-2x'></li>
         <li href="#" class='fa fa-twitter nav-link text-light text-uppercase font-weight-bold px-3 fa-2x'></li>
         {% else %}
-        <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="#">EVENT INFORMATION</a></li>
+        <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="{{ url_for('main.index') }}">EVENT INFORMATION</a></li>
         <li class="nav-link"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="{{ url_for('auth.login') }}">LOGIN</a></li> 
         <li href="#" class='fa fa-instagram nav-link text-light text-uppercase font-weight-bold px-3 fa-2x'></li>
         <li href="#" class='fa fa-facebook nav-link text-light text-uppercase font-weight-bold px-3 fa-2x'></li>
