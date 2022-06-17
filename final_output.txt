@@ -1,0 +1,84 @@
+commit 61706ee59e38fdb158e233afa17e4ee219ec3822
+Author: n10831436 <n10831436@qut.edu.au>
+Date:   Fri Jun 17 16:10:48 2022 +1000
+
+    final assignment3
+
+commit 17a311c2df679e3bf3ed9b6716e674b1db071c4a
+Author: n10831436 <n10831436@qut.edu.au>
+Date:   Thu Jun 16 23:50:12 2022 +1000
+
+    .
+
+commit e09b691cda7ec98c886949938a4b1df5518e5df0
+Author: n10831436 <n10831436@qut.edu.au>
+Date:   Thu Jun 16 23:36:55 2022 +1000
+
+    landing page with create
+
+commit a4da21fee8f4dfcd479a238a102e050a98433a95
+Author: n10831436 <n10831436@qut.edu.au>
+Date:   Thu Jun 16 19:49:53 2022 +1000
+
+    add ticket function but did not work yet
+
+commit c6f383e067e77526cf53772c76e69b354be0f17e
+Author: n10831436 <n10831436@qut.edu.au>
+Date:   Thu Jun 16 18:09:26 2022 +1000
+
+    detail event page
+
+commit 2e815c025ed22801e2e4688a8a7bbb1e03afab30
+Author: n10831436 <n10831436@qut.edu.au>
+Date:   Thu Jun 16 17:21:33 2022 +1000
+
+    catch up 404 error
+
+commit 96179b0163d43cb415ee3a61b710bdad16d44b75
+Author: n10831436 <n10831436@qut.edu.au>
+Date:   Thu Jun 16 16:52:37 2022 +1000
+
+    booking-history.html
+
+commit 2dd508aa987e6421115f6c7101410d3463b23f6d
+Author: n10831436 <n10831436@qut.edu.au>
+Date:   Thu Jun 16 13:25:15 2022 +1000
+
+    revise url
+
+commit 2be7b0172641ee8cd4555077c074eedcbe614e34
+Author: n10831436 <n10831436@qut.edu.au>
+Date:   Thu Jun 16 12:59:57 2022 +1000
+
+    create function and comment function
+
+commit 6e2b01291a07d2570dad82e3b8e8868f7a51d317
+Merge: e254cfa 4e685fb
+Author: n10831436 <n10831436@qut.edu.au>
+Date:   Wed Jun 15 20:12:49 2022 +1000
+
+    Merge branch 'main' of https://github.com/scriefers/IAB207-ASS3
+
+commit e254cfacb20d9d4e7fd154043cb4acd98a975064
+Author: n10831436 <n10831436@qut.edu.au>
+Date:   Wed Jun 15 20:08:05 2022 +1000
+
+    revise login function
+
+commit 4e685fb9578372324d759e795a58e0a253f7c134
+Author: kwanhyunkim <55569899+KWANHYUNKIM@users.noreply.github.com>
+Date:   Wed Jun 15 15:41:46 2022 +1000
+
+    Delete READ.ME
+
+commit b5e6165e6fa1b7134e63873bff7556a87d6c4992
+Author: n10831436 <n10831436@qut.edu.au>
+Date:   Wed Jun 15 15:41:03 2022 +1000
+
+    auth, login with success
+
+commit 47a667f648a73503818e28f9a8b6d5f7c85c17be
+Author: n10831436 <n10831436@qut.edu.au>
+Date:   Wed Jun 15 00:15:37 2022 +1000
+
+    inital code with login, register
