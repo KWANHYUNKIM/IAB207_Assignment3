@@ -3,7 +3,12 @@ Attribution: The design of this website was heavily inspired by Scotch.io's HTML
 https://scotch.io/courses/create-a-beautiful-htmlcss-website
 
   /* mi ni navigation */ 
-
+@media screen and (min-width:768px){
+  .mini-navbar {
+    background: #eaeaea;
+    text-align: left;
+  }
+}
   .mini-navbar {
     background: #c0a46c;
     text-align: left;

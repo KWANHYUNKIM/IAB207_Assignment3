@@ -3,6 +3,7 @@ from wtforms.fields import TextAreaField, SubmitField, StringField, PasswordFiel
 from wtforms.validators import InputRequired, Length, EqualTo,Email
 from flask_wtf.file import FileRequired, FileField, FileAllowed
 
+
 ALLOWED_FILE = {'PNG','JPG','png','jpg'}
 
 #Create new winery information and ticket status 
@@ -42,5 +43,5 @@ class CommentForm(FlaskForm):
   
 #User ticket
 class TicketForm(FlaskForm):
-    ticket_quantity = IntegerField('Quantity', validators= [InputRequired(), Length(min=1 , max= 4)])
+    ticket_quantity = StringField('Ticket Quantity',validators=[InputRequired()])
     submit = SubmitField('Create')

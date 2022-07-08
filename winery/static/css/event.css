@@ -186,7 +186,7 @@ https://scotch.io/courses/create-a-beautiful-htmlcss-website
     width:500px;
     height:30px;
   }
-  .review button{
+  .ticket a{
     position: absolute;
     top:4995px;
     left:1150px;
