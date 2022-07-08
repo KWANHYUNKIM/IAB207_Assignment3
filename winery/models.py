@@ -53,4 +53,21 @@ class Ticket(db.Model):
     seller_id = db.Column(db.Integer, db.ForeignKey('destinations.id'))
     ticket_quantity = db.Column(db.Integer, db.ForeignKey('destinations.ticket_quantity'))
 
+class Detail_Destination(db.Model):
+     __tablename__ = 'details'
+     id = db.Column(db.Integer, primary_key = True)
+     name = db.Column(db.String(80))
+     main_image = db.Column(db.String(200))
+     sub_image = db.Column(db.String(200))
+     description = db.Column(db.String(200))
+     location = db.Column(db.String(200))
+     when = db.Column(db.String(200))
+     cost = db.Column(db.String(200))
+     include = db.Column(db.String(200))
+     what_you_receive = db.Column(db.String(200))
+     event_registration = db.Column(db.String(200))
+     covid_19 = db.Column(db.String(200))
+     getting_around = db.Column(db.String(200))
+     tags = db.Column(db.String(200))
+     socialmedia = db.Column(db.String(200))
     
